@@ -34,23 +34,11 @@ console.log("factoral 4: " + factorial(4));
 
 function fibonacci(n) {
   
-  let p1 = 0;
-  let p2 = 0;
-  var result = 0;
-  for (let i = 0; i < n; i++) {
-    if (i === 0) {
-      result = 0;
-      p1 = result;
-    }
-    else if (i === 1) {
-      result = 1;
-      p2 = result;
-    } else{
-      result = add(p1, p2);
-      p1 = p2;
-      p2 = result;
-    }
+ 
+  let a = [0,1];
+  for (let i = 2; i < n; i++) {
+    a[i] = add(a[i-1], a[i-2])
   }
-  return result;
+  return a[n-1];
 }
-console.log("fibonacci 8: " + fibonacci(8));
+console.log("fibonacci 9: " + fibonacci(9));
