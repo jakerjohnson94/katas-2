@@ -4,8 +4,8 @@ function add(a, b) {
 console.log("add 2,4: " + add(2, 4));
 
 function multiply(a, b) {
-  var result = 0;
-  for (i = 1; i <= b; i++) {
+  let result = 0;
+  for (let i = 1; i <= b; i++) {
     result = add(result, a);
   }
   return result;
@@ -13,23 +13,19 @@ function multiply(a, b) {
 console.log("multiply 6,8: " + multiply(6, 8));
 
 function power(x, n) {
-  let i;
-  var result = 0;
-  for (i = 1; i < n; i++) {
-    while (i === 1) {
-      result = multiply(x, x);
-      i++;
-    }
+
+  let result = 1;
+  for (let i = 1; i <= n; i++) {
     result = multiply(result, x);
   }
   return result;
 }
-console.log("power 2,8: " + power(2, 8));
+console.log("power 6,2: " + power(6, 2));
 
 function factorial(a) {
-  let i;
-  var result = 1;
-  for (i = 1; i <= a; i++) {
+
+  let result = 1;
+  for (let i = 1; i <= a; i++) {
     result = multiply(result, i);
   }
   return result;
@@ -37,19 +33,19 @@ function factorial(a) {
 console.log("factoral 4: " + factorial(4));
 
 function fibonacci(n) {
-  let i;
-  var p1 = 0;
-  var p2 = 0;
+  
+  let p1 = 0;
+  let p2 = 0;
   var result = 0;
-  for (i = 0; i < n; i++) {
+  for (let i = 0; i < n; i++) {
     if (i === 0) {
       result = 0;
       p1 = result;
     }
-    if (i === 1) {
+    else if (i === 1) {
       result = 1;
       p2 = result;
-    } else {
+    } else{
       result = add(p1, p2);
       p1 = p2;
       p2 = result;
